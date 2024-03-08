@@ -1022,13 +1022,13 @@ class GaussianDiffusion:
         # breakpoint()
         terms = {}
         # breakpoint()
-        from calflops import calculate_flops
+        #from calflops import calculate_flops
         import torch.nn as nn
         isinstance(model, nn.Module)
         input_shape = (128,20)  # define your input shape here
-        flops, macs, params = calculate_flops(model, input_shape,include_backPropagation=True)
-        print("FLOPs:%s  MACs:%s  Params:%s \n" %(flops, macs, params))
-        breakpoint()
+        #flops, macs, params = calculate_flops(model, input_shape,include_backPropagation=True)
+        #print("FLOPs:%s  MACs:%s  Params:%s \n" %(flops, macs, params))
+        #breakpoint()
         if self.loss_type == LossType.KL or self.loss_type == LossType.RESCALED_KL:
             terms["loss"] = self._vb_terms_bpd(
                 model=model,

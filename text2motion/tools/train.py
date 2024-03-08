@@ -56,6 +56,7 @@ if __name__ == '__main__':
     elif opt.dataset_name == 'kit':
         opt.data_root = './data/KIT-ML'
         opt.motion_dir = pjoin(opt.data_root, 'new_joint_vecs')
+        print(f"motion dir is: {opt.motion_dir}")
         opt.text_dir = pjoin(opt.data_root, 'texts')
         opt.joints_num = 21
         radius = 240 * 8

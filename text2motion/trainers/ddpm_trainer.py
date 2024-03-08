@@ -98,7 +98,7 @@ class DDPMTrainer(object):
 
 
         B, T = x_start.shape[:2]
-        print(x_start.shape)
+        #print(x_start.shape)
         n_pre=40 # L elemnts of DCT
         # added dct
         dct_m_all,_=self.util_mac(T)
@@ -110,12 +110,12 @@ class DDPMTrainer(object):
         t, _ = self.sampler.sample(B, x_start.device)
         # breakpoint()
 
-        from calflops import calculate_flops
+        #from calflops import calculate_flops
         # input_shape = (128, 196)  # define your input shape here
         # rgs=[x_start,t,cur_len,caption, ],
-        flops, macss, paramss = calculate_flops(self.encoder,args = [x_start, t,cur_len,caption] ,include_backPropagation=True)
-        print("FLOPs:%s  MACs:%s  Params:%s \n" %(flops, macss, paramss))
-        breakpoint()
+        #flops, macss, paramss = calculate_flops(self.encoder,args = [x_start, t,cur_len,caption] ,include_backPropagation=True)
+        # print("FLOPs:%s  MACs:%s  Params:%s \n" %(flops, macss, paramss))
+        #breakpoint()
 
         output = self.diffusion.training_losses(
             model=self.encoder,
