@@ -2,7 +2,7 @@ import os
 import sys
 curr_path = os.getcwd()
 sys.path.append(curr_path)
-sys.path.append(curr_path + '\..\datasets')
+sys.path.append(curr_path + r'\..\datasets')
 from datetime import datetime
 import numpy as np
 import torch
